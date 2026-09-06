@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="https://raw.githubusercontent.com/Coccinella-Labs/buildanywhere/main/.github/assets/thumbnail.png" alt="buildanywhere" width="100%">
+</p>
+
 # Build-Anywhere Pipeline
 
 Build the same way on GitHub Actions, GitLab CI, and CircleCI. All logic in scripts.
