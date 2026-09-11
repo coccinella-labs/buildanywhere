@@ -1,10 +1,10 @@
 # Default owners
-* @harpertoken/maintainers
+* @bniladridas
 
 # CI scripts
-/scripts/ @harpertoken/ci-team
+/scripts/ @bniladridas
 
 # CI configurations
-/.github/ @harpertoken/devops
-/.gitlab-ci.yml @harpertoken/devops
-/.circleci/ @harpertoken/devops
+/.github/ @bniladridas
+/.gitlab-ci.yml @bniladridas
+/.circleci/ @bniladridas
