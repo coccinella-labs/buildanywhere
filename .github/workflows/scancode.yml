@@ -16,6 +16,7 @@ jobs:
 
     - name: Setup Scancode
       run: |
+        pip install "pluggy<1.7"
         pip install scancode-toolkit
 
     - name: Run Scancode

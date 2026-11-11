@@ -71,17 +71,36 @@ For customizable GitLab CI with inputs, see `gitlab-inputs-example.yml`.
 ## Files
 
 ```
-   🌳 Project Structure
-   ├── 📁 scripts/ci/              # Build scripts
-   │   ├── 🔧 setup.sh             # Setup
-   │   ├── 🧪 test.sh              # Tests
-   │   ├── 🏗️ build.sh             # Build
-   │   └── 🔍 lint.sh              # Lint
-   ├── 📋 Makefile                 # Local commands
-   ├── 🚀 .github/workflows/       # GitHub Actions
-   ├── 🔄 .gitlab-ci.yml           # GitLab CI
-   ├── 🔄 .circleci/               # CircleCI
-   └── 🔄 gitlab-inputs-example.yml # GitLab inputs example
+🌳 Project Structure
+├── 📁 scripts/ci/                # Build scripts
+│   ├── 🔧 setup.sh               # Setup
+│   ├── 🧪 test.sh                # Tests
+│   ├── 🏗️ build.sh               # Build
+│   └── 🔍 lint.sh                # Lint
+├── 📋 Makefile                   # Local commands
+├── 📦 package.json               # Node.js project
+├── 🔒 package-lock.json          # Dependency lock
+├── 🐳 Dockerfile                 # Container test
+├── 📄 index.js                   # Example code
+├── 📜 LICENSE                    # MIT
+├── 🏷️ VERSION                    # 1.0.0
+├── 🚀 .github/                   # GitHub Actions
+│   ├── workflows/ci.yml          # Main CI
+│   ├── workflows/reusable-ci.yml # Reusable CI
+│   ├── workflows/scancode.yml    # License scan
+│   ├── CODEOWNERS                # Reviewers
+│   └── assets/thumbnail.png      # Header image
+├── 🔄 .gitlab-ci.yml             # GitLab CI
+├── 🔄 .circleci/                 # CircleCI
+│   └── config.yml                # CircleCI config
+├── 🔧 gitlab-inputs-example.yml  # GitLab inputs
+├── 🔍 .eslintrc.json             # Lint config
+├── ✨ .prettierrc                # Format config
+├── 🪝 .pre-commit-config.yaml    # Pre-commit hooks
+├── 📐 .editorconfig              # Editor settings
+├── 📂 .vscode/settings.json      # Editor settings
+├── 📃 .yamllint                  # YAML lint config
+└── 🗑️ .gitignore                 # Ignore list
 ```
 
 ## Contribute
