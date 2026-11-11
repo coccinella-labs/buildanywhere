@@ -11,7 +11,7 @@ if [ -f "package.json" ]; then
     npm run lint
 elif [ -f "requirements.txt" ] || [ -f "setup.py" ] || [ -f "pyproject.toml" ]; then
     echo "Linting Python project..."
-    python -m flake8 . || python -m pylint . || echo "No linter configured"
+    python -m flake8 . || python -m pylint .
 elif [ -f "Cargo.toml" ]; then
     echo "Linting Rust project..."
     cargo clippy -- -D warnings
