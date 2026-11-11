@@ -6,9 +6,14 @@
   "scripts": {
     "test": "node -e \"console.log(require('./index.js').message)\" | grep -q 'build-anywhere' && echo 'Tests passed'",
     "build": "echo \"Building project...\" && exit 0",
-    "lint": "echo \"Linting code...\" && exit 0"
+    "lint": "echo \"Linting code...\" && exit 0",
+    "format": "prettier --write .",
+    "format:check": "prettier --check ."
   },
   "keywords": [],
   "author": "",
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "prettier": "^3.9.10"
+  }
 }
