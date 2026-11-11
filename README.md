@@ -26,6 +26,17 @@ Each CI does three things:
 2. Set up the environment.
 3. Run the scripts.
 
+### Pipeline stages
+
+The pipeline has four stages, and later stages depend on earlier ones:
+
+- `setup` installs dependencies. It runs first and its output is used by the other stages.
+- `test` runs the test suite.
+- `build` produces the build output.
+- `lint` checks style and correctness.
+
+Because the later stages consume `setup` output, each CI backend must restore it before running them. GitHub Actions runs all four as sequential steps in one job, so the output persists naturally. GitLab and CircleCI run them as separate jobs, so they need a shared cache keyed on the lockfile, which is how `setup` output reaches `test`, `build`, and `lint` on those backends.
+
 ## Local
 
 Run the CI locally:
