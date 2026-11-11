@@ -37,6 +37,9 @@ jobs:
       - image: cimg/node:24.0
     steps:
       - checkout
+      - restore_cache:
+          keys:
+            - v1-dependencies-{{ checksum "package-lock.json" }}
       - run:
           name: Test
           command: ./scripts/ci/test.sh
@@ -46,6 +49,9 @@ jobs:
       - image: cimg/node:24.0
     steps:
       - checkout
+      - restore_cache:
+          keys:
+            - v1-dependencies-{{ checksum "package-lock.json" }}
       - run:
           name: Build
           command: ./scripts/ci/build.sh
@@ -55,6 +61,9 @@ jobs:
       - image: cimg/node:24.0
     steps:
       - checkout
+      - restore_cache:
+          keys:
+            - v1-dependencies-{{ checksum "package-lock.json" }}
       - run:
           name: Lint
           command: ./scripts/ci/lint.sh
