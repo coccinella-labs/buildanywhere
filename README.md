@@ -4,47 +4,47 @@
 
 # Build-Anywhere Pipeline
 
-Build the same way on GitHub Actions, GitLab CI, and CircleCI. All logic in scripts.
+Build the same way on GitHub Actions, GitLab CI, and CircleCI. All logic lives in scripts, so each CI system only orchestrates.
 
 ## Why
 
-Template for portable CI/CD. No duplicate code. Scripts do the work.
+A template for portable CI/CD. One set of scripts, three CI systems, no duplicated pipeline code.
 
-Supports:
+Supported setups:
 
-- Open-source contributors → GitHub Actions
-- Internal/self-hosted infra → GitLab CI
-- Legacy or enterprise pipelines → CircleCI
+- Open-source contributors use GitHub Actions.
+- Internal or self-hosted infrastructure uses GitLab CI.
+- Legacy or enterprise pipelines use CircleCI.
 
 ## How
 
-CI files orchestrate. Scripts run.
+The CI files orchestrate. The scripts run.
 
-Each CI:
+Each CI does three things:
 
-1. Check out code
-2. Set up environment
-3. Run scripts
+1. Check out the code.
+2. Set up the environment.
+3. Run the scripts.
 
 ## Local
 
-Run CI locally:
+Run the CI locally:
 
 ```bash
 make ci
 ```
 
-Or:
+Or run each stage separately:
 
 ```bash
 ./scripts/ci/setup.sh && ./scripts/ci/test.sh && ./scripts/ci/build.sh && ./scripts/ci/lint.sh
 ```
 
-Works locally = works on CI.
+If it works locally, it works on CI.
 
 ### Docker
 
-Test in container:
+Test in a container:
 
 ```bash
 docker build -t ci-test .
@@ -53,16 +53,20 @@ docker run ci-test
 
 ### Pre-commit
 
-Auto-checks:
+Install the auto-checks:
 
 ```bash
 pip install pre-commit
 pre-commit install
 ```
 
-Manual: `pre-commit run --all-files`
+Run them manually:
 
-Checks commit messages.
+```bash
+pre-commit run --all-files
+```
+
+The commit-msg hook checks that commit messages follow Conventional Commits.
 
 ### Advanced
 
@@ -88,6 +92,7 @@ For customizable GitLab CI with inputs, see `gitlab-inputs-example.yml`.
 │   ├── workflows/ci.yml          # Main CI
 │   ├── workflows/reusable-ci.yml # Reusable CI
 │   ├── workflows/scancode.yml    # License scan
+│   ├── dependabot.yml            # Auto-update deps
 │   ├── CODEOWNERS                # Reviewers
 │   └── assets/thumbnail.png      # Header image
 ├── 🔄 .gitlab-ci.yml             # GitLab CI
