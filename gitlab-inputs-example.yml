@@ -3,7 +3,7 @@
 spec:
   inputs:
     node_version:
-      default: '20'
+      default: '24'
       description: 'Node.js version to use'
 
 stages:
@@ -11,6 +11,17 @@ stages:
   - test
   - build
   - lint
+
+# All jobs share one cache keyed on the lockfile, so each stage restores the
+# dependencies installed by setup instead of running in a fresh container.
+default:
+  cache:
+    key:
+      files:
+        - package-lock.json
+    paths:
+      - node_modules/
+    policy: pull-push
 
 setup:
   stage: setup
