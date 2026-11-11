@@ -1,6 +1,10 @@
 ---
 extends: default
 
+ignore: |
+  *.json
+  .prettierrc
+
 rules:
   line-length:
     max: 120
