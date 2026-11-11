@@ -6,12 +6,15 @@
   "scripts": {
     "test": "node test/index.test.js",
     "build": "echo \"Building project...\" && exit 0",
-    "lint": "eslint . --max-warnings=0"
+    "lint": "eslint . --max-warnings=0",
+    "format": "prettier --write .",
+    "format:check": "prettier --check ."
   },
   "keywords": [],
   "author": "",
   "license": "MIT",
   "devDependencies": {
-    "eslint": "^8.57.1"
+    "eslint": "^8.57.1",
+    "prettier": "^3.9.10"
   }
 }
