@@ -6,9 +6,12 @@
   "scripts": {
     "test": "node -e \"console.log(require('./index.js').message)\" | grep -q 'build-anywhere' && echo 'Tests passed'",
     "build": "echo \"Building project...\" && exit 0",
-    "lint": "echo \"Linting code...\" && exit 0"
+    "lint": "eslint . --max-warnings=0"
   },
   "keywords": [],
   "author": "",
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "eslint": "^8.57.1"
+  }
 }
