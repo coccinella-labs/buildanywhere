@@ -24,7 +24,7 @@ jobs:
           scancode --license --csv scancode-results.csv .
 
       - name: Upload results
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v6
         with:
           name: scancode-results
           path: scancode-results.csv
